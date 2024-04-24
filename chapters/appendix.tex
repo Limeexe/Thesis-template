@@ -1,0 +1,87 @@
+
+% The environment used here (theappendices) is a wrapper for the basic appendices environment which changes the appearance of the title page and the structure and appearance of the appendices in the table of contents and PDF bookmarks. The original functionality can be restored by simply removing the 'the' from the \begin{} and \end{} statements below.
+
+\begin{theappendices}
+
+\chapter{Language Editing Certification}
+\centering
+
+This is to certify that the undersigned has reviewed and went through all the pages of the Bachelor of Science in Computer Science thesis manuscript titled \\
+
+\textbf{"ENTER YOUR TITLE HERE"} \\
+
+
+of \textbf{AuthorName1}, \textbf{AuthorName2}, \textbf{AuthorName3}, as against the set of structural rules that govern research writing in accord with the composition of sentences, phrases, and words in the English language.
+ \newline \newline \newline \\
+
+\noindent \textbf{JUAN DE LA CRUZ} \\
+\textit{Language Editor} \\
+
+Date:\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+
+\chapter{Secretary's Certification}
+\centering
+
+This is to certify that the undersigned has provided accurate recommendations, suggestions, and comments unanimously agreed and approved by the panel of examiners during the oral examination of the thesis titled \\ \textbf{"ENTER YOUR TITLE HERE"} \\  prepared and submitted by \textbf{AuthorName1}, \textbf{AuthorName2}, \textbf{AuthorName3}, and that the same have not been amended, modified or obliterated. \newline \newline \newline \\
+
+
+
+\textbf{MS. MARIA DAISY R. BELARDO} \\
+\textit{Secretary} \\
+
+
+Date:\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+\chapter{JOINT AFFIDAVIT OF UNDERTAKING (Plagiarism)}
+
+\centering
+
+\textbf{JOINT AFFIDAVIT OF UNDERTAKING}
+
+
+% IN WITNESS WHEREOF, I have hereunto set my name this ____ day of ___________ 202__ in
+% ___________________________________, Philippines.
+% SUBSCRIBED AND SWORN TO before me this ___ day of ________ at _______________, Philippines,
+% affiants exhibiting to me their competent proofs of identity above stated.
+% Doc. No. ___________:
+% Page No.: __________:
+% Book No.: __________:
+% Series of 202_.
+
+\chapter{Source Code}
+
+\begin{lstlisting}[language=Python, caption=Python example]
+import numpy as np
+    
+def incmatrix(genl1,genl2):
+    m = len(genl1)
+    n = len(genl2)
+    M = None #to become the incidence matrix
+    VT = np.zeros((n*m,1), int)  #dummy variable
+    
+    #compute the bitwise xor matrix
+    M1 = bitxormatrix(genl1)
+    M2 = np.triu(bitxormatrix(genl2),1) 
+
+    for i in range(m-1):
+        for j in range(i+1, m):
+            [r,c] = np.where(M2 == M1[i,j])
+            for k in range(len(r)):
+                VT[(i)*n + r[k]] = 1;
+                VT[(i)*n + c[k]] = 1;
+                VT[(j)*n + r[k]] = 1;
+                VT[(j)*n + c[k]] = 1;
+                
+                if M is None:
+                    M = np.copy(VT)
+                else:
+                    M = np.concatenate((M, VT), 1)
+                
+                VT = np.zeros((n*m,1), int)
+    
+    return M
+\end{lstlisting}
+
+
+\end{theappendices}
